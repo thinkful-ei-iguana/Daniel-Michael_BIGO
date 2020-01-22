@@ -38,6 +38,27 @@
 /* 11 */
 //TOWER
 
+//Derive Algorithm (recursive)
+//5 disks after 7 calls
+//how many moves to complete with 3, 5, 7 disks?
+//what is the runtime?
+
+function tower(n, source, dest, temp) {
+  if(n === 1){
+    return print(source, dest);
+  }
+  tower(n-1, source, temp, dest);
+  // move disk
+  print(source, dest);
+  tower(n-1, temp, dest, source);
+}
+let counter = 0;
+function print(a,b){
+  counter++;
+  console.log(`Move ${counter}: moving disk from ${a} to ${b}`);
+}
+tower(5, 'a', 'c', 'b');
+
 /* 12 */
 function counting(num) {
   for (let x = num; x >= 0; x--) {
@@ -60,7 +81,7 @@ console.log(power(2,3));
 function reverse(str) {
   let newStr = '';
   for(let x = str.length; x > 0; x--) {
-    newStr += str[x-1]
+    newStr += str[x-1];
   }
   return newStr;
 }
@@ -91,7 +112,7 @@ console.log(split('qwer7qwedf7qwe7', '7'));
 
 
 function fib(num) {
-  let arr = []
+  let arr = [];
   for (let x = 0; x < num; x++) {
     if (x === 0 || x === 1) arr.push(1);
     else arr.push(arr[x-2] + arr[x-1]);
