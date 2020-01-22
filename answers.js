@@ -38,10 +38,20 @@
 /* 11 */
 //TOWER
 
-//Derive Algorithm (recursive)
-//5 disks after 7 calls
-//how many moves to complete with 3, 5, 7 disks?
-//what is the runtime?
+/*Derive Algorithm (recursive) check
+  5 disks after 7 calls
+  A: 5, 4 
+  B: -
+  C: 3, 2, 1
+
+  How many moves to complete with 3, 5, 7 disks?
+  3: 7
+  5: 31
+  7: 127
+  
+  what is the runtime?
+  O(2^n)
+  */
 
 function tower(n, source, dest, temp) {
   if(n === 1){
@@ -77,6 +87,7 @@ function power(base, exp) {
   return num;
 }
 console.log(power(2,3));
+//O(n)
 
 function reverse(str) {
   let newStr = '';
